@@ -2,7 +2,7 @@ import express from 'express';
 // import fs from 'fs';
 const fs = require('fs')
 import carList from '../cars.json';
-import searchCars from './carSearch';
+import searchCars from './carSearch'
 import checkDate from './dateChecker';
 const api = express();
 
@@ -13,7 +13,7 @@ api.get('/cars', (req, res) => {
 });
 
 api.get('/car/:id', (req, res) => {
-  let idToFind = parseInt(req.params.id)
+  let idToFind = parseInt(req.params.id);
   let car = searchCars(carList, idToFind);
   res.send(car);
 });
@@ -27,6 +27,26 @@ api.post('/cars', (req, res) => {
       } 
     })
     res.json("Car successfully added") 
+});
+
+api.delete('/cars/:id', (req, res) => {
+  let idToDelete = parseInt(req.params.id);
+  let carIndex;
+  for (let i = 0; i < carList.cars.length; i ++ ){
+    if (carList.cars[i].id === idToDelete) {
+      carIndex = i;
+    }
+  }
+  let originalCarList = carList;
+  originalCarList.cars.splice(carIndex)
+
+  fs.writeFile('cars.json', JSON.stringify(originalCarList, null, 4),  (err) => {
+    if (err) {
+      console.log("Error here")
+    } 
+  })
+  res.json("Car deleted") 
+
 });
 
 api.listen(3000, () => {
