@@ -1,5 +1,5 @@
 {"cars":
   [
-    {"id": 1, "make": "ford", "model": "fiesta", "buildDate": "02/05/2021", "colorID": 2}
+    {"id": 1, "make": "ford", "model": "fiesta", "buildDate": "02/05/2021", "colourID": 2}
   ]
 }
