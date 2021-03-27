@@ -28,4 +28,12 @@ describe('api', () => {
     expect(response.statusCode).toBe(200);
     expect(response.body).toBe('Car successfully added')
   });
+
+  test('POST /cars validates buildDate', async () => {
+    const response = await request
+    .post('/cars')
+    .send({ id: 2, make: 'VW', model: 'golf', buildDate: '03/06/2016', colourID: 4 })
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toBe('Car build date is older than four years')
+  });
 })
