@@ -1,4 +1,4 @@
-import colourList from '../colours';
+import colourList from '../../colours';
 
 const validateColour = (id) => {
 
