@@ -1,8 +1,9 @@
 import express from 'express';
+import cars from '../cars.json'
 const api = express();
 
 api.get('/cars', (req, res) => {
-  res.send("/cars");
+  res.send(cars);
 });
 
 api.listen(3000, () => {
