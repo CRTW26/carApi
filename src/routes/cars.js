@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import fs from 'fs';
 import carList from '../../cars.json';
-import searchCars from '../carSearch'
-import checkDate from '../dateChecker';
+import searchCars from '../searchCars'
+import checkDate from '../checkDate';
 import validateColour from '../validateColour';
 
 let router = Router();
