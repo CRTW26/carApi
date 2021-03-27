@@ -14,11 +14,18 @@ describe('api', () => {
   test('GET /car/:id', async () => {
     const response = await request.get('/car/1');
     expect(response.statusCode).toBe(200);
-    console.log(response.body)
     expect(response.body.id).toBe(1);
     expect(response.body.make).toBe("ford");
     expect(response.body.model).toBe("fiesta");
     expect(response.body.buildDate).toBe("02/05/2021");
     expect(response.body.colourID).toBe(2);
+  });
+
+  test('POST /cars', async () => {
+    const response = await request
+    .post('/cars')
+    .send({ id: 2, make: 'VW', model: 'golf', buildDate: '03/06/2020', colourID: 4 })
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toBe('Car successfully added')
   });
 })
