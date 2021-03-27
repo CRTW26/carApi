@@ -19,16 +19,7 @@ api.get('/car/:id', (req, res) => {
 });
 
 api.post('/cars', (req, res) => {
-  // let dateArray = req.body.buildDate.split('/')
-  // let carBuildDate = new Date(dateArray[2], dateArray[1], dateArray[0])
-  // let now = new Date()
-  // let diff = Math.abs(now - carBuildDate)
-  // let days = (diff / (1000 * 3600 * 24))
-  // console.log(days)
-
-  if (checkDate(req.body.buildDate) > 1460) {
-    res.json("Car build date is older than four years")
-  } else {
+  if (checkDate(req.body.buildDate) > 1460) return res.json("Car build date is older than four years")
     carList.cars.push(req.body)
     fs.writeFile('cars.json', JSON.stringify(carList, null, 4),  (err) => {
       if (err) {
@@ -36,7 +27,6 @@ api.post('/cars', (req, res) => {
       } 
     })
     res.json("Car successfully added") 
-  }
 });
 
 api.listen(3000, () => {
