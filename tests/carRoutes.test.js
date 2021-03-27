@@ -37,6 +37,14 @@ describe('api', () => {
     expect(response.body).toBe('Car build date is older than four years')
   });
 
+  test('POST /cars validates buildDate', async () => {
+    const response = await request
+    .post('/cars')
+    .send({ id: 3, make: 'VW', model: 'golf', buildDate: '03/06/2020', colourID: 5 })
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toBe('Invalid colour')
+  });
+
   test('DELETE /cars/:id', async () => {
     const response = await request
     .delete('/cars/2');

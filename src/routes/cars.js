@@ -3,6 +3,7 @@ import fs from 'fs';
 import carList from '../../cars.json';
 import searchCars from '../carSearch'
 import checkDate from '../dateChecker';
+import validateColour from '../validateColour';
 
 let router = Router();
 
@@ -17,14 +18,15 @@ router.get('/car/:id', (req, res) => {
 });
 
 router.post('/cars', (req, res) => {
-  if (checkDate(req.body.buildDate) > 1460) return res.json("Car build date is older than four years")
-    carList.cars.push(req.body)
-    fs.writeFile('cars.json', JSON.stringify(carList, null, 4),  (err) => {
-      if (err) {
-        throw(err)
-      } 
-    })
-    res.json("Car successfully added") 
+  if (checkDate(req.body.buildDate) > 1460) return res.json("Car build date is older than four years");
+  if (!validateColour(req.body.colourID)) return (res.json("Invalid colour"));
+  carList.cars.push(req.body)
+  fs.writeFile('cars.json', JSON.stringify(carList, null, 4),  (err) => {
+    if (err) {
+      throw(err)
+    } 
+  })
+  res.json("Car successfully added") 
 });
 
 router.delete('/cars/:id', (req, res) => {
