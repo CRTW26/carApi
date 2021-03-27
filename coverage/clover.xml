@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1616854416668" clover="3.2.0">
-  <project timestamp="1616854416669" name="All files">
-    <metrics statements="41" coveredstatements="38" conditionals="10" coveredconditionals="6" methods="9" coveredmethods="8" elements="60" coveredelements="52" complexity="0" loc="41" ncloc="41" packages="1" files="3" classes="3"/>
+<coverage generated="1616854653219" clover="3.2.0">
+  <project timestamp="1616854653219" name="All files">
+    <metrics statements="38" coveredstatements="35" conditionals="8" coveredconditionals="5" methods="9" coveredmethods="8" elements="55" coveredelements="48" complexity="0" loc="38" ncloc="38" packages="1" files="3" classes="3"/>
     <file name="carSearch.js" path="/Users/connorworthington/websites/carApi/src/carSearch.js">
-      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="3" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="4" count="2" type="stmt"/>
     </file>
     <file name="dateChecker.js" path="/Users/connorworthington/websites/carApi/src/dateChecker.js">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -21,7 +20,7 @@
       <line num="7" count="2" type="stmt"/>
     </file>
     <file name="index.js" path="/Users/connorworthington/websites/carApi/src/index.js">
-      <metrics statements="29" coveredstatements="26" conditionals="8" coveredconditionals="5" methods="7" coveredmethods="6"/>
+      <metrics statements="27" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="7" coveredmethods="6"/>
       <line num="3" count="1" type="stmt"/>
       <line num="7" count="1" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
@@ -40,17 +39,15 @@
       <line num="29" count="1" type="stmt"/>
       <line num="32" count="1" type="stmt"/>
       <line num="33" count="1" type="stmt"/>
+      <line num="34" count="1" type="stmt"/>
       <line num="35" count="1" type="stmt"/>
-      <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="37" count="1" type="stmt"/>
-      <line num="40" count="1" type="stmt"/>
-      <line num="41" count="1" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="40" count="0" type="stmt"/>
       <line num="43" count="1" type="stmt"/>
-      <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="45" count="0" type="stmt"/>
-      <line num="48" count="1" type="stmt"/>
-      <line num="52" count="1" type="stmt"/>
-      <line num="53" count="1" type="stmt"/>
+      <line num="46" count="1" type="stmt"/>
+      <line num="47" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

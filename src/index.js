@@ -14,8 +14,8 @@ api.get('/cars', (req, res) => {
 
 api.get('/car/:id', (req, res) => {
   let idToFind = parseInt(req.params.id);
-  let car = searchCars(carList, idToFind);
-  res.send(car);
+  let carID = searchCars(carList, idToFind);
+  res.send(carList.cars[carID]);
 });
 
 api.post('/cars', (req, res) => {
@@ -31,12 +31,7 @@ api.post('/cars', (req, res) => {
 
 api.delete('/cars/:id', (req, res) => {
   let idToDelete = parseInt(req.params.id);
-  let carIndex;
-  for (let i = 0; i < carList.cars.length; i ++ ){
-    if (carList.cars[i].id === idToDelete) {
-      carIndex = i;
-    }
-  }
+  let carIndex = searchCars(carList, idToDelete)
   let originalCarList = carList;
   originalCarList.cars.splice(carIndex)
 
@@ -46,7 +41,6 @@ api.delete('/cars/:id', (req, res) => {
     } 
   })
   res.json("Car deleted") 
-
 });
 
 api.listen(3000, () => {
