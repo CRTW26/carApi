@@ -21,6 +21,18 @@ This is a simple API that allows users to Get, Post and Delete data about cars.
   DELETE /car/:id
   ```
 
+**Making Requests**  
+To make requests to the API when running the development server I used Postman. This made making POST requests easier as I was able to set the body of the request to JSON and send data in the following format: 
+```
+{
+  "id": 1,
+  "make": "ford",
+  "model": "fiesta",
+  "buildDate": "02/05/2021",
+  "colourID": 2
+}
+```
+
 ### Testing ###
 To run the test suite, navigate to inside the directory and run the following command:   
 ``` 
@@ -34,4 +46,5 @@ npm run test
 ### Improvements ###
 These are the improvements I would make to the API with more time:
   - Set up a database instead of of reading and writing to a JSON file.
+  - Add validation to POST requests to ensure that ID is unique.
   - Add validation to ensure that all fields data is present when a POST request is made.
