@@ -40,7 +40,7 @@ npm run test
 ```
 
 ### Technologies ###
- - Node with ExpressJS 
+ - Node with Express 
  - Jest for testing 
 
 ### Improvements ###
