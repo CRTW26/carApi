@@ -45,6 +45,6 @@ npm run test
 
 ### Improvements ###
 These are the improvements I would make to the API with more time:
-  - Set up a database instead of of reading and writing to a JSON file.
+  - Set up a database instead of reading and writing to a JSON file.
   - Add validation to POST requests to ensure that ID is unique.
   - Add validation to ensure that all fields data is present when a POST request is made.
